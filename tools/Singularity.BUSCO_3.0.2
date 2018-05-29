@@ -122,10 +122,10 @@ _EOF_
 
 %environment
 
-    AUGUSTUS_CONFIG_PATH="/opt/augustus-3.3/config"
-    BUSCO_CONFIG_FILE="/busco/config/config.ini"
-    TOOLDIR=/tools
-    PATH="${PATH}:/blast/bin:/opt/augustus-3.3/bin:/opt/augustus-3.3/scripts:/busco/scripts"
+    export AUGUSTUS_CONFIG_PATH="/opt/augustus-3.3/config"
+    export BUSCO_CONFIG_FILE="/busco/config/config.ini"
+    export TOOLDIR="/tools"
+    export PATH="${PATH}:/blast/bin:/opt/augustus-3.3/bin:/opt/augustus-3.3/scripts:/busco/scripts"
 
 %runscript
 
