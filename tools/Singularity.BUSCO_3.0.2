@@ -85,6 +85,9 @@ Include: build-essential software-properties-common python3 wget zlib1g-dev lang
     cd /augustus 
     make && make install
 
+    # allow BUSCO to *write* to the augustus config dir. Yuck.
+    chmod -R 777 "${AUGUSTUS_CONFIG_PATH}"
+
     # install blast 2.2.31
     cd
     wget -O "blast.tar.gz" \
