@@ -36,3 +36,21 @@ nohup singularity exec \
     --augustus_species honeybee1 \
     --mode genome \
     &> busco_404_docker.log &
+
+nohup singularity exec \
+    -B /cifs,/media,${PWD},${TMPDIR} \
+    -H $(mktemp -d) \
+    --pwd ${PWD} \
+    --containall --cleanenv \
+    --writable-tmpfs \
+    img/busco_4.0.4.sif \
+    busco \
+    --force \
+    --in test_data/NC_037638.fasta \
+    --out busco_404_local \
+    --lineage_dataset test_data/hymenoptera_odb10 \
+    --cpu 8 \
+    --augustus_species honeybee1 \
+    --mode genome \
+    &> busco_404_local.log &
+
